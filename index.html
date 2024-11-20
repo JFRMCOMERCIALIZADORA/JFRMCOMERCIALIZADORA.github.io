@@ -3,56 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página Protegida con Login</title>
+    <title>DASHBOAR COMBUSTIBLE</title>
     <style>
+        /* Contenedor del iframe para mantener la relación de aspecto */
+        .iframe-container {
+            position: relative;
+            width: 100%;
+            max-width: 1200px; /* Limita el tamaño máximo si se quiere */
+            margin: auto; /* Centra el contenedor en la página */
+            padding-top: 56.25%; /* Relación de aspecto 16:9 */
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        /* Estilos del iframe en sí */
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 15px;
+        }
+
+        /* Efectos de hover para el contenedor */
+        .iframe-container:hover {
+            transform: scale(1.02);
+            box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Fondo de la página */
         body {
             font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f0f0f0;
-        }
-        #login-form {
-            background: #ffffff;
+            background: linear-gradient(to right, #2c3e50, #3498db);
+            color: #fff;
+            text-align: center;
             padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        #protected-content {
-            display: none;
+
+        /* Encabezado */
+        h1 {
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            color: #ecf0f1;
         }
     </style>
 </head>
 <body>
-    <div id="login-form">
-        <h2>Iniciar Sesión</h2>
-        <label for="password">Contraseña:</label>
-        <input type="password" id="password" />
-        <button onclick="checkPassword()">Ingresar</button>
-        <p id="error-message" style="color: red; display: none;">Contraseña incorrecta. Intenta de nuevo.</p>
+    <h1>DASHBOARD COMBUSTIBLE</h1>
+    <div class="iframe-container">
+        <iframe src="https://lookerstudio.google.com/embed/reporting/1cad3294-ea72-4784-be57-0c9dee9dc366/page/kkvzC" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
     </div>
-
-    <div id="protected-content">
-        <h1>Bienvenido al Contenido Protegido</h1>
-        <p>Este es el contenido solo visible para usuarios con la contraseña correcta.</p>
-    </div>
-
-    <script>
-        function checkPassword() {
-            const passwordInput = document.getElementById('password').value;
-            const errorMessage = document.getElementById('error-message');
-
-            // Aquí defines la contraseña correcta
-            const correctPassword = 'clave123';
-
-            if (passwordInput === correctPassword) {
-                window.location.href = 'paginaprincipal.html';
-            } else {
-                errorMessage.style.display = 'block';
-            }
-        }
-    </script>
 </body>
 </html>
